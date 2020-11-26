@@ -1,0 +1,6 @@
+C:\Users\europ\Desktop\App\roots\algebra\bin\Debug\algebra.dll
+C:\Users\europ\Desktop\App\roots\algebra\bin\Debug\algebra.pdb
+C:\Users\europ\Desktop\App\roots\algebra\obj\Debug\algebra.csprojAssemblyReference.cache
+C:\Users\europ\Desktop\App\roots\algebra\obj\Debug\algebra.csproj.CoreCompileInputs.cache
+C:\Users\europ\Desktop\App\roots\algebra\obj\Debug\algebra.dll
+C:\Users\europ\Desktop\App\roots\algebra\obj\Debug\algebra.pdb

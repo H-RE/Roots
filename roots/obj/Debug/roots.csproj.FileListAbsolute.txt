@@ -1,0 +1,10 @@
+C:\Users\europ\Desktop\App\roots\roots\bin\Debug\roots.exe.config
+C:\Users\europ\Desktop\App\roots\roots\bin\Debug\roots.exe
+C:\Users\europ\Desktop\App\roots\roots\bin\Debug\roots.pdb
+C:\Users\europ\Desktop\App\roots\roots\obj\Debug\roots.csprojAssemblyReference.cache
+C:\Users\europ\Desktop\App\roots\roots\obj\Debug\roots.csproj.CoreCompileInputs.cache
+C:\Users\europ\Desktop\App\roots\roots\obj\Debug\roots.exe
+C:\Users\europ\Desktop\App\roots\roots\obj\Debug\roots.pdb
+C:\Users\europ\Desktop\App\roots\roots\bin\Debug\algebra.dll
+C:\Users\europ\Desktop\App\roots\roots\bin\Debug\algebra.pdb
+C:\Users\europ\Desktop\App\roots\roots\obj\Debug\roots.csproj.CopyComplete
