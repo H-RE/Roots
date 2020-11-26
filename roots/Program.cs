@@ -19,8 +19,11 @@ namespace roots
             var P1 = S * S + 4 * S+29;
             Console.WriteLine(P1.ToString());
 
-            var lis = new List<int>();
-            Console.WriteLine(lis.Count);
+            var ev1 = P1.Evaluate("X", -5);
+            var ev2 = ev1.Evaluate("Y", -5);
+            Console.WriteLine(ev1.ToString());
+            //Error, no aparece la componente imaginaria
+            Console.WriteLine(ev2.ToString());
 
             Console.ReadKey();
         }

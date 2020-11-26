@@ -55,37 +55,35 @@ namespace algebra
             }
             return temp;
         }
-        private Polynomial Clean()
+        private void Clean()
         {
-            var temp = new Polynomial();
-            for (int i = 0; i < temp.Terms.Count - 1; i++)
+            for (int i = 0; i < Terms.Count - 1; i++)
             {
-                for (int j = i + 1; j < temp.Terms.Count;)
+                for (int j = i + 1; j < Terms.Count;)
                 {
-                    if (temp.Terms[i].EqualSym(temp.Terms[j]))
+                    if (Terms[i].EqualSym(Terms[j]))
                     {
                         //SE SUMAN LOS TERMINOS RESPETIDOS EN UNO SOLO
-                        int signI = temp.Terms[i].IsPositive ? 1 : -1;
-                        int signJ = temp.Terms[j].IsPositive ? 1 : -1;
-                        double value = signI * temp.Terms[i].Coefficient + signJ * temp.Terms[j].Coefficient;
+                        int signI = Terms[i].IsPositive ? 1 : -1;
+                        int signJ = Terms[j].IsPositive ? 1 : -1;
+                        double value = signI * Terms[i].Coefficient + signJ * Terms[j].Coefficient;
                         double Coef = Math.Abs(value);
-                        temp.Terms[i].Coefficient = Coef;
-                        temp.Terms[i].IsPositive = value > 0;
+                        Terms[i].Coefficient = Coef;
+                        Terms[i].IsPositive = value > 0;
                         //ELIMINACIÓN DEL TEMINO REPETIDO
-                        temp.Terms.RemoveAt(j);
+                        Terms.RemoveAt(j);
                     }
                     else j++;
                 }
             }
-            return temp;
         }
         static public Polynomial operator +(Polynomial poly1, Polynomial poly2)
         {
             var temp = new Polynomial();
             temp.Terms.AddRange(poly1.Clone().Terms);
             temp.Terms.AddRange(poly2.Clone().Terms);
-
-            
+            //Se simplifica el polinomio
+            temp.Clean();
             return temp;
         }
 
@@ -108,10 +106,8 @@ namespace algebra
                 tmp.Terms.Add( V.Evaluate(variable, value));
             }
             //Se simplifica el polinomio
-
-
+            tmp.Clean();
             return tmp;
         }
-
     }
 }
