@@ -34,10 +34,11 @@ namespace algebra
             {
                 if (variable == Variables[i]._ID)
                 {
-                    var tmpC = Coefficient* Math.Pow(value, Variables[i]._Pow);
+                    var sign = IsPositive ? 1 : -1;
+                    var tmpC = sign*Coefficient* Math.Pow(value, Variables[i]._Pow);
                     tmp.Coefficient = Math.Abs(tmpC);
                     tmp.Variables.RemoveAt(i);
-                    tmp.IsPositive = value > 0;
+                    tmp.IsPositive = tmpC > 0;
                     return tmp;
                 }
             }
@@ -47,8 +48,15 @@ namespace algebra
         {
             if (container.Variables.Count != Variables.Count) return false;
 
-            //Si las variables están vacias entonces se trata de una constante
-            if (Variables.Count == 0) return true;
+            //Si las variables están vacias entonces se trata de una constante o un numero complejo
+
+            if (Variables.Count == 0)
+            {
+                if (container.IsImaginary == IsImaginary)
+                    return true;
+                else
+                    return false;
+            }
 
             foreach (var V1 in Variables)
             {
@@ -149,6 +157,5 @@ namespace algebra
             tmp.Terms.Add(s2.Clone());
             return tmp;
         }
-
     }
 }

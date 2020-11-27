@@ -24,6 +24,7 @@ namespace algebra
                     temp.Terms.Add(termA * termB);
                 }
             }
+            temp.Clean();
             return temp;
         }
 
@@ -61,6 +62,7 @@ namespace algebra
             {
                 for (int j = i + 1; j < Terms.Count;)
                 {
+                    
                     if (Terms[i].EqualSym(Terms[j]))
                     {
                         //SE SUMAN LOS TERMINOS RESPETIDOS EN UNO SOLO
@@ -76,12 +78,32 @@ namespace algebra
                     else j++;
                 }
             }
+            for (int i = 0; i < Terms.Count;)
+            {
+                if (Terms[i].Coefficient == 0)
+                    Terms.RemoveAt(i);
+                else i++;
+            }
         }
         static public Polynomial operator +(Polynomial poly1, Polynomial poly2)
         {
             var temp = new Polynomial();
             temp.Terms.AddRange(poly1.Clone().Terms);
             temp.Terms.AddRange(poly2.Clone().Terms);
+            //Se simplifica el polinomio
+            temp.Clean();
+            return temp;
+        }
+        static public Polynomial operator -(Polynomial poly1, Polynomial poly2)
+        {
+            var temp = new Polynomial();
+            temp.Terms.AddRange(poly1.Clone().Terms);
+            var negative = poly2.Clone().Terms;
+            foreach(var V in negative)
+            {
+                V.IsPositive = !V.IsPositive;
+            }
+            temp.Terms.AddRange(negative);
             //Se simplifica el polinomio
             temp.Clean();
             return temp;
