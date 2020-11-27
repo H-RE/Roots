@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Polynomial.cs" />
+    <Compile Include="SimplePoly.cs" />
     <Compile Include="Sym.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SymContainer.cs" />

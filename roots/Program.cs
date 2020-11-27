@@ -39,13 +39,22 @@ namespace roots
             ev1 = P1.Evaluate("Y", 0);
             ev1 = ev1.Evaluate("X", -0.7435);
             Console.WriteLine(ev1.ToString());
+            
+            double[] asd = { 29,33,5,1};
+            
+            var a = new SimplePoly(asd);
+            var root = a.Root(-90, 0);
+            Console.WriteLine("raiz: "+root.ToString());
+            var Simplificado = a.Ruffini(root);
+            foreach(var v in Simplificado.Coef)
+            {
+                Console.WriteLine(v.ToString());
+            }
+            //Test de raiz compleja
+            Console.WriteLine(Simplificado.Root(1, 0.01));
+
             Console.ReadKey();
             Console.ReadKey();
         }
-    }
-    class SimplePoly
-    {
-        //contiene unicamente los coeficientes de un polinomio de grado n
-        //contiene un metodo para Roots
     }
 }
